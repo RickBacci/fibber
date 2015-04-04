@@ -38,7 +38,7 @@ class Fibber
     @sequence << (@sequence[-2] + @sequence[-1])
 
     if @sequence.size == numbers
-      @sequence
+      @sequence.each_slice(5) { |vals| puts vals.join(', ')}
     else
       calculate(numbers)
     end
@@ -50,6 +50,10 @@ end
 
 fib = Fibber.new
 
-p fib.calculate(15)
+fib.calculate(15)
+
+
+
+
 
 
