@@ -38,7 +38,19 @@ class Fibber
     @sequence << (@sequence[-2] + @sequence[-1])
 
     if @sequence.size == numbers
-      @sequence.each_slice(5) { |vals| puts vals.join(', ')}
+
+      @sequence.each_slice(5) do |vals|
+
+        vals.map! { |val| val.to_s.rjust(4) }
+
+        puts vals.join(', ')
+      end
+
+
+
+
+
+      #puts @sequence * ', '
     else
       calculate(numbers)
     end
