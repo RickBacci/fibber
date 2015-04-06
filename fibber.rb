@@ -22,10 +22,9 @@
 # n0 + n1 = n2
 # (n - 2) + (n - 1) = n
 
-quantity = 20
+quantity = 40
 
 class Fibber
-  attr_accessor :sequence
 
   def initialize
     @sequence = [0, 1]
@@ -42,17 +41,8 @@ class Fibber
       buffer = @sequence.last.to_s.length
 
       @sequence.each_slice(5) do |vals|
-
-        vals.map! { |val| val.to_s.rjust(buffer) }
-
-        puts vals.join(', ')
+        puts vals.map { |val| val.to_s.rjust(buffer) }.join(', ')
       end
-
-
-
-
-
-      #puts @sequence * ', '
     else
       calculate(numbers)
     end
@@ -65,9 +55,3 @@ end
 fib = Fibber.new
 
 fib.calculate(quantity)
-
-
-
-
-
-

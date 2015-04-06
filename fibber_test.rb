@@ -47,6 +47,5 @@ class FibberTest < Minitest::Test
     @fib.calculate(1)
     assert_equal [0], @fib.calculate(1)
   end
-
 end
 
